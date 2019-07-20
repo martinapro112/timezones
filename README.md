@@ -1,0 +1,1 @@
+This project is a graphical interface for displaying time in different timezones at current or set moment in time.
