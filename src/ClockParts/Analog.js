@@ -1,9 +1,13 @@
 import React from 'react';
 
 const Analog = (props) => {
-    let hourDegrees = Number(props.time.format('HH')) * 30;
-    let minuteDegrees = Number(props.time.format('mm')) * 6;
-    let secondDegrees = Number(props.time.format('ss')) * 6;
+    let hours = Number(props.time.format('HH'));
+    let minutes = Number(props.time.format('mm'));
+    let seconds = Number(props.time.format('ss'));
+
+    let hourDegrees = hours * 30 + (minutes / 12) * 6;
+    let minuteDegrees = minutes * 6 + (seconds / 10);
+    let secondDegrees = seconds * 6;
 
     let dots = [];
     for (var i = 0; i < 60; i++) {
