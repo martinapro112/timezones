@@ -6,4 +6,4 @@ Working features:
   
 Planned features:  
 - set different time and date instead of now  
-- add and remove of other cities  
+- add and remove other cities  
