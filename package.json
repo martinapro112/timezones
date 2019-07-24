@@ -1,6 +1,6 @@
 {
   "name": "timezones",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "author": "Martina Prochazkova",
   "dependencies": {
@@ -8,7 +8,6 @@
     "moment-timezone": "^0.5.26",
     "node-sass": "^4.12.0",
     "react": "^16.8.6",
-    "react-color": "^2.17.3",
     "react-dom": "^16.8.6",
     "react-switch": "^5.0.1",
     "sass-loader": "^7.1.0"

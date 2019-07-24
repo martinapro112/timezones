@@ -12,7 +12,7 @@ const Analog = (props) => {
     let dots = [];
     for (var i = 0; i < 60; i++) {
         dots.push(
-            <div className="dot-wrapper" style={{ transform: 'rotate(' + i * 6 + 'deg)' }}>
+            <div className="dot-wrapper" style={{ transform: 'rotate(' + i * 6 + 'deg)' }} key={ i }>
                 <div className={ 'dot ' + ((i % 5) === 0 ? 'bigger' : 'normal') } />
             </div>
         );
