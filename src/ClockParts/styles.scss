@@ -1,0 +1,105 @@
+.clock {
+    display: inline-block;
+    margin: 1em;
+    padding: 0.5em;
+    background-color: $white;
+    color: $green;
+    border-radius: 1em;
+
+    .day {
+        color: $brown;
+        font-weight: 600;
+    }
+    
+    .city {
+        color: $black;
+        font-weight: 600;
+    }
+
+    .digital {
+        display: block;
+        font-size: 2em;
+        padding: 0.1em 0.5em;
+        margin: 0.1em;
+        border-radius: 0.5em;
+        background-color: $yellow;
+    }
+
+    .analog {
+        display: block;
+        font-size: 2em;
+        height: 5em;
+        width: 5em;
+        border-radius: 5em;
+        margin: 0.1em;
+        background-color: $yellow;
+        position: relative;
+
+        .hours, .minutes, .seconds, .dots {
+            display: block;
+            position: absolute;
+            width: 0.2em;
+        }
+        
+        .hours {
+            height: 3.2em;
+            top: 0.9em;
+            left: 2.4em;
+        }
+        
+        .minutes {
+            height: 4em;
+            top: 0.5em;
+            left: 2.4em;
+        }
+        
+        .seconds {
+            width: 0.05em;
+            height: 4em;
+            top: 0.5em;
+            left: 2.475em;
+        }
+
+        .stick {
+            display: block;
+            background-color: $beige;
+            width: inherit;
+            height: 50%;
+            border-radius: 0.2em;
+            
+            &.seconds-stick {
+                background-color: $blue;
+            }
+        }
+
+        .center {
+            display: block;
+            position: absolute;
+            top: 2.25em;
+            left: 2.25em;
+            height: 0.5em;
+            width: 0.5em;
+            border-radius: 2.25em;
+            background-color: $black;
+        }
+        
+        .dot-wrapper {
+            position: absolute;
+            top: 0.2em;
+            left: 2.45em;
+            height: 4.6em;
+            width: 0.1em;
+            border-radius: 0.1em;
+
+            .dot {
+                height: 0.1em;
+                background-color: $green;
+
+                &.bigger {
+                    border: 2px solid $black;
+                    border-radius: 0.1em;
+                }
+            }
+        }
+    }
+}

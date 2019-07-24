@@ -1,0 +1,38 @@
+$green:  #8d8741;
+$blue:   #659dbd;
+$beige:  #daad86;
+$brown:  #bc986a;
+$yellow: #fbeec1;
+$white:  white;
+$black:  black;
+
+body {
+    background-color: $blue;
+}
+
+#app {
+    text-align: center;
+}
+
+.square {
+    display: inline-block;
+    height: 3em;
+    width: 3em;
+    border: 1px solid $white;
+
+    &.green {
+        background-color: $green;
+    }
+    &.blue {
+        background-color: $blue;
+    }
+    &.beige {
+        background-color: $beige;
+    }
+    &.brown {
+        background-color: $brown;
+    }
+    &.yellow {
+        background-color: $yellow;
+    }
+}

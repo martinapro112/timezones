@@ -1,0 +1,20 @@
+.type-switch {
+    margin: 1em;
+    
+    .option {
+        display: block;
+        text-align: center;
+        line-height: 40px;
+        font-size: 20px;
+        font-weight: 600;
+        color: $brown;
+
+        &.left {
+            margin-left: 16px;
+        }
+
+        &.right {
+            margin-left: -36px;
+        }
+    }
+}

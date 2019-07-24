@@ -2,7 +2,7 @@ import React from 'react';
 
 const City = (props) => {
     return (
-        <div className="clock-city">
+        <div className="city">
             { props.city }
         </div>
     );

@@ -1,5 +1,5 @@
-import React from 'react';
-import Switch from "react-switch";
+import React    from 'react';
+import Switch   from 'react-switch';
 
 const TypeSwitch = (props) => {
     return (
@@ -7,8 +7,8 @@ const TypeSwitch = (props) => {
             className="type-switch"
             onChange={ props.change }
             checked={ props.analog }
-            uncheckedIcon={<div className="option option-right">Digital</div>}
-            checkedIcon={<div className="option option-left">Analog</div>}
+            uncheckedIcon={<div className="option right">Digital</div>}
+            checkedIcon={<div className="option left">Analog</div>}
             offColor="#fff"
             onColor="#fff"
             offHandleColor="#bc986a"

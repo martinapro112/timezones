@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import './App.css';
 import moment from 'moment-timezone';
 
-import Digital from './ClockParts/Digital';
-import Analog from './ClockParts/Analog';
-import City from './ClockParts/City';
-import Day from './ClockParts/Day';
+import Digital  from './ClockParts/Digital';
+import Analog   from './ClockParts/Analog';
+import City     from './ClockParts/City';
+import Day      from './ClockParts/Day';
 
 import TypeSwitch from './Settings/TypeSwitch';
 
@@ -55,7 +54,7 @@ class App extends Component {
         });
 
         return (
-            <div className="app">
+            <div id="app">
                 <TypeSwitch change={ this.handleSwitchChange } analog={ this.state.analog } />
                 <br />
                 { clocks }

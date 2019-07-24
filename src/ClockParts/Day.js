@@ -2,7 +2,7 @@ import React from 'react';
 
 const Day = (props) => {
     return (
-        <div className="clock-date">
+        <div className="day">
             { props.time.format('Do of MMMM') }
         </div>
     );
