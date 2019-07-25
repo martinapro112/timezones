@@ -3,7 +3,7 @@ import React from 'react';
 const Analog = (props) => {
     let hours = Number(props.time.format('HH'));
     let minutes = Number(props.time.format('mm'));
-    let seconds = Number(props.time.format('ss'));
+    let seconds = props.showSeconds ? Number(props.time.format('ss')) : 0;
 
     let hourDegrees = hours * 30 + (minutes / 12) * 6;
     let minuteDegrees = minutes * 6 + (seconds / 10);

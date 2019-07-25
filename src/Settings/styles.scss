@@ -1,20 +1,48 @@
-.type-switch {
-    margin: 1em;
-    
-    .option {
-        display: block;
-        text-align: center;
-        line-height: 40px;
-        font-size: 20px;
-        font-weight: 600;
-        color: $brown;
+#settings {
+    background-color: rgba(0, 0, 0, 0.3);
 
-        &.left {
-            margin-left: 16px;
+    .setting {
+        margin: 1em;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .switch {
+        .option {
+            display: block;
+            text-align: center;
+            line-height: 40px;
+            font-size: 20px;
+            font-weight: 600;
+            color: $brown;
+
+            &.left {
+                margin-left: 16px;
+            }
+
+            &.right {
+                margin-left: -45px;
+            }
+        }
+    }
+
+    .date-picker {
+        text-align: center;
+
+        .form-control {
+            line-height: 2em;
+            border-radius: 1em;
+            font-size: 1em;
+            padding: 0 1em;
+            width: 7.8em;
+            border: none;
+            color: $brown;
+            font-weight: 600;
         }
 
-        &.right {
-            margin-left: -36px;
+        .rdtPicker {
+            margin-left: calc(50% - 130px);
+            border-radius: 1em;
         }
     }
 }

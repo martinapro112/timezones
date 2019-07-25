@@ -3,7 +3,9 @@ This project is a graphical interface for displaying time in different timezones
 Working features:  
 - digital clocks design  
 - analog clocks design  
-  
-Planned features:  
 - set different time and date instead of now  
+
+Planned features:  
 - add and remove other cities  
+- set different timezone for set time  
+- mountain design  

@@ -6,14 +6,17 @@ import Analog   from './ClockParts/Analog';
 import City     from './ClockParts/City';
 import Day      from './ClockParts/Day';
 
-import TypeSwitch from './Settings/TypeSwitch';
+import TypeSwitch       from './Settings/TypeSwitch';
+import TimeSwitch       from './Settings/TimeSwitch';
+import DatePicker       from './Settings/DatePicker';
 
 class App extends Component {
     state = {
         time: null,
-        timer: null,
         allZones: moment.tz.names(),
-        analog: true
+        analog: true,
+        current: true,
+        dateTime: moment()
     }
     
     componentDidMount = () => {
@@ -25,12 +28,24 @@ class App extends Component {
     }
 
     tick = () => {
-        this.setState({ time: new Date() });
+        if (this.state.current) {
+            this.setState({ time: new Date() });
+            console.log(this.state.time._d);
+        }
     }
 
-    handleSwitchChange = (checked) => {
-        this.setState({ analog: checked });
-      }
+    handleTypeSwitchChange = (analog) => {
+        this.setState({ analog: analog });
+    }
+
+    handleTimeSwitchChange = (current) => {
+        this.setState({ current: current, dateTime: moment() });
+    }
+
+    handleDateTimeChange = (newDateTime) => {
+        console.log(newDateTime._d);
+        this.setState({ dateTime: newDateTime, time: newDateTime });
+    }
 
     render() {
         let zones = [
@@ -42,8 +57,11 @@ class App extends Component {
         let clocks = [];
 
         zones.forEach(zone => {
-            let time = moment().tz(zone.value);
-            let clock = this.state.analog ? <Analog time={ time } /> : <Digital time={ time } />;
+            let time = moment(this.state.time).tz(zone.value);
+            let clock =
+                this.state.analog ?
+                <Analog time={ time } showSeconds={ this.state.current } /> :
+                <Digital time={ time } showSeconds={ this.state.current } />;
             clocks.push(
                 <div className="clock" key={ zone.value }>
                     { clock }
@@ -55,10 +73,14 @@ class App extends Component {
 
         return (
             <div id="app">
-                <TypeSwitch change={ this.handleSwitchChange } analog={ this.state.analog } />
-                <br />
-                { clocks }
-                <br />
+                <div id="settings">
+                    <TypeSwitch change={ this.handleTypeSwitchChange } analog={ this.state.analog } />
+                    <TimeSwitch change={ this.handleTimeSwitchChange } current={ this.state.current } />
+                    { this.state.current ? null : <DatePicker change={ this.handleDateTimeChange } dateTime={ this.state.dateTime } /> }
+                </div>
+                <div id="clocks">
+                    { clocks }
+                </div>
                 <div className="green square" />
                 <div className="blue square" />
                 <div className="beige square" />

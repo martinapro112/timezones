@@ -3,7 +3,7 @@ import React from 'react';
 const Digital = (props) => {
     return (
         <div className="digital">
-            { props.time.format('HH:mm:ss') }
+            { props.showSeconds ? props.time.format('HH:mm:ss') : props.time.format('HH:mm') + ':00' }
         </div>
     );
 }
