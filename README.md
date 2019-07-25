@@ -4,8 +4,10 @@ Working features:
 - digital clocks design  
 - analog clocks design  
 - set different time and date instead of now  
+- mountain design  
 
 Planned features:  
 - add and remove other cities  
 - set different timezone for set time  
-- mountain design  
+- optimize for phone  
+- sticky settings bar  

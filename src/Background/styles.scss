@@ -1,0 +1,36 @@
+#mountains {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+
+    .mountain {
+        display: block;
+        position: absolute;
+        bottom: 0;
+
+        height: 0;
+        width: 0;
+        border-style: solid;
+
+        transition: border-width 2s, left 2s, color 2s;
+
+        &.green {
+            border-color: transparent transparent $green transparent;
+        }
+
+        &.beige {
+            border-color: transparent transparent $beige transparent;
+        }
+
+        &.brown {
+            border-color: transparent transparent $brown transparent;
+        }
+
+        &.cover {
+            border-color: transparent transparent rgba(0, 0, 0, 0.2) transparent;
+        }
+    }
+}

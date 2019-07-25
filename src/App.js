@@ -5,6 +5,7 @@ import Digital  from './ClockParts/Digital';
 import Analog   from './ClockParts/Analog';
 import City     from './ClockParts/City';
 import Day      from './ClockParts/Day';
+import Mountains from './Background/Mountains';
 
 import TypeSwitch       from './Settings/TypeSwitch';
 import TimeSwitch       from './Settings/TimeSwitch';
@@ -30,7 +31,6 @@ class App extends Component {
     tick = () => {
         if (this.state.current) {
             this.setState({ time: new Date() });
-            console.log(this.state.time._d);
         }
     }
 
@@ -43,7 +43,6 @@ class App extends Component {
     }
 
     handleDateTimeChange = (newDateTime) => {
-        console.log(newDateTime._d);
         this.setState({ dateTime: newDateTime, time: newDateTime });
     }
 
@@ -73,19 +72,17 @@ class App extends Component {
 
         return (
             <div id="app">
-                <div id="settings">
-                    <TypeSwitch change={ this.handleTypeSwitchChange } analog={ this.state.analog } />
-                    <TimeSwitch change={ this.handleTimeSwitchChange } current={ this.state.current } />
-                    { this.state.current ? null : <DatePicker change={ this.handleDateTimeChange } dateTime={ this.state.dateTime } /> }
+                <Mountains />
+                <div id="content">
+                    <div id="settings">
+                        <TypeSwitch change={ this.handleTypeSwitchChange } analog={ this.state.analog } />
+                        <TimeSwitch change={ this.handleTimeSwitchChange } current={ this.state.current } />
+                        { this.state.current ? null : <DatePicker change={ this.handleDateTimeChange } dateTime={ this.state.dateTime } /> }
+                    </div>
+                    <div id="clocks">
+                        { clocks }
+                    </div>
                 </div>
-                <div id="clocks">
-                    { clocks }
-                </div>
-                <div className="green square" />
-                <div className="blue square" />
-                <div className="beige square" />
-                <div className="brown square" />
-                <div className="yellow square" />
             </div>
         );
     }
