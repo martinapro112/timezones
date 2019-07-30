@@ -20,6 +20,7 @@ const Analog = (props) => {
 
     return (
         <div className="analog">
+            <div className="close" onClick={ props.click } />
             <div className="hours" style={{ transform: 'rotate(' + hourDegrees + 'deg)' }}>
                 <div className="stick"></div>
             </div>

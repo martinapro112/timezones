@@ -40,6 +40,7 @@
             margin: 0.1em;
             border-radius: 0.5em;
             background-color: $yellow;
+            position: relative;
         }
 
         .analog {
@@ -118,6 +119,40 @@
                     }
                 }
             }
+        }
+
+        .close {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 0.5em;
+            height: 0.5em;
+            opacity: 0.3;
+            padding: 0.1em;
+            cursor: pointer;
+            display: none;
+        }
+        .close:hover {
+            opacity: 1;
+        }
+        .close:before, .close:after {
+            position: absolute;
+            left: 0.5em;
+            content: ' ';
+            height: 0.5em;
+            width: 2px;
+            background-color: #333;
+        }
+        .close:before {
+            transform: rotate(45deg);
+        }
+        .close:after {
+            transform: rotate(-45deg);
+        }
+    }
+    &:hover, &:hover {
+        .close {
+            display: block;
         }
     }
 }

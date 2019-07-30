@@ -17,7 +17,13 @@ class App extends Component {
         allZones: moment.tz.names(),
         analog: true,
         current: true,
-        dateTime: moment()
+        dateTime: moment(),
+        zones: [
+            { value: 'Europe/Prague',       city: 'Prague' },
+            { value: 'America/New_York',    city: 'New York' },
+            { value: 'Europe/London',       city: 'London' },
+            { value: 'Asia/Tokyo',          city: 'Tokyo' }
+        ]
     }
     
     componentDidMount = () => {
@@ -46,21 +52,21 @@ class App extends Component {
         this.setState({ dateTime: newDateTime, time: newDateTime });
     }
 
+    removeClock = (i) => {
+        let zones = this.state.zones;
+        zones.splice(i, 1);
+        this.setState({ zones: zones });
+    }
+
     render() {
-        let zones = [
-            { value: 'Europe/Prague',       city: 'Prague' },
-            { value: 'America/New_York',    city: 'New York' },
-            { value: 'Europe/London',       city: 'London' },
-            { value: 'Asia/Tokyo',          city: 'Tokyo' }
-        ];
         let clocks = [];
 
-        zones.forEach(zone => {
+        this.state.zones.forEach((zone, i) => {
             let time = moment(this.state.time).tz(zone.value);
             let clock =
                 this.state.analog ?
-                <Analog time={ time } showSeconds={ this.state.current } /> :
-                <Digital time={ time } showSeconds={ this.state.current } />;
+                <Analog time={ time } showSeconds={ this.state.current } click={ () => { this.removeClock(i); }} /> :
+                <Digital time={ time } showSeconds={ this.state.current } click={ () => { this.removeClock(i); }} />;
             clocks.push(
                 <div className="clock" key={ zone.value }>
                     { clock }
