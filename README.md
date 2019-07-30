@@ -5,9 +5,9 @@ Working features:
 - analog clocks design  
 - set different time and date instead of now  
 - mountain design  
+- sticky settings bar  
 
 Planned features:  
 - add and remove other cities  
 - set different timezone for set time  
 - optimize for phone  
-- sticky settings bar  
