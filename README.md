@@ -6,8 +6,8 @@ Working features:
 - set different time and date instead of now  
 - mountain design  
 - sticky settings bar  
+- optimized for phone and browsers  
 
 Planned features:  
 - add and remove other cities  
 - set different timezone for set time  
-- optimize for phone  

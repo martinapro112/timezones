@@ -79,7 +79,7 @@ class App extends Component {
                         <TimeSwitch change={ this.handleTimeSwitchChange } current={ this.state.current } />
                         { this.state.current ? null : <DatePicker change={ this.handleDateTimeChange } dateTime={ this.state.dateTime } /> }
                     </div>
-                    <div id="clocks">
+                    <div id="clocks" className={ this.state.current ? 'current' : 'set' }>
                         { clocks }
                     </div>
                 </div>

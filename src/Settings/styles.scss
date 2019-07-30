@@ -3,7 +3,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     z-index: 100;
 
     .setting {
@@ -43,6 +43,12 @@
             border: none;
             color: $brown;
             font-weight: 600;
+            min-height: 2em;
+
+            @-moz-document url-prefix() {
+                width: 8.2em;
+                font-weight: 400;
+            }
         }
 
         .rdtPicker {
