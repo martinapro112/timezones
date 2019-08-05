@@ -22,6 +22,7 @@
         background-color: $white;
         color: $green;
         border-radius: 1em;
+        vertical-align: top;
 
         .day {
             color: $brown;
@@ -141,7 +142,7 @@
             content: ' ';
             height: 0.5em;
             width: 2px;
-            background-color: #333;
+            background-color: $gray;
         }
         .close:before {
             transform: rotate(45deg);
@@ -150,7 +151,7 @@
             transform: rotate(-45deg);
         }
     }
-    &:hover, &:hover {
+    &:hover {
         .close {
             display: block;
         }

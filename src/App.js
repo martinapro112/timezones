@@ -10,6 +10,8 @@ import Mountains from './Background/Mountains';
 import TypeSwitch       from './Settings/TypeSwitch';
 import TimeSwitch       from './Settings/TimeSwitch';
 import DatePicker       from './Settings/DatePicker';
+import AddIcon          from './Settings/AddIcon';
+import AddList          from './Settings/AddList';
 
 class App extends Component {
     state = {
@@ -17,6 +19,7 @@ class App extends Component {
         allZones: moment.tz.names(),
         analog: true,
         current: true,
+        addList: false,
         dateTime: moment(),
         zones: [
             { value: 'Europe/Prague',       city: 'Prague' },
@@ -50,6 +53,17 @@ class App extends Component {
 
     handleDateTimeChange = (newDateTime) => {
         this.setState({ dateTime: newDateTime, time: newDateTime });
+    }
+
+    handleOpenAddList = () => {
+        this.setState({ addList: true });
+    }
+
+    handleAddClock = (selected) => {
+        let zones = this.state.zones;
+        let parsedText = selected.split('/');
+        zones.push({ value: selected, city: parsedText[parsedText.length - 1].replace(/_/g, ' ') });
+        this.setState({ zones: zones, addList: false });
     }
 
     removeClock = (i) => {
@@ -87,6 +101,11 @@ class App extends Component {
                     </div>
                     <div id="clocks" className={ this.state.current ? 'current' : 'set' }>
                         { clocks }
+                        {
+                            this.state.addList ?
+                            <AddList allZones={ this.state.allZones } addClock={ this.handleAddClock } /> :
+                            <AddIcon openAddList={ this.handleOpenAddList } analog={ this.state.analog } />
+                        }
                     </div>
                 </div>
             </div>

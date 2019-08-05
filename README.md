@@ -7,7 +7,7 @@ Working features:
 - mountain design  
 - sticky settings bar  
 - optimized for phone and browsers  
+- add and remove other cities  
 
 Planned features:  
-- add and remove other cities  
 - set different timezone for set time  
